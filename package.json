@@ -1,7 +1,7 @@
 {
-  "name": "eleventy",
+  "name": "hybridly",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hybrid wiki/blog.",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf _site",
@@ -29,5 +29,7 @@
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "daisyui": "^2.51.5"
+  }
 }
