@@ -1,8 +1,26 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth antialiased">
   <head>
+    <meta charset="utf-8">
     {% if title %}
     <title>{{ title }}</title>
+    {% endif %}
+    <meta property="og:title" content="{{ title if title else "Smashmaster's Hybrid Site" }}" />
+    <meta property="og:description" content="{{ description if description else "This page has no description yet sorry. " }}" />
+    <meta property="description" content="{{ description if description else "This page has no description yet sorry. " }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:article:author" content="{{ author }}" />
+    <meta property="og:article:tag" content="{{ tags }}" />
+    {% if mathjax %}
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
     {% endif %}
      <link rel="stylesheet" type="text/css" href="/assets/main.css" />
   </head>
@@ -12,6 +30,8 @@
      
       {{ content | safe }}
     </main>
+    {% include "../components/footer.njk" %}
     <script src="/assets/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
   </body>
 </html>

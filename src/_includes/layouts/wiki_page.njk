@@ -7,5 +7,17 @@ layout: layouts/base.njk
 {% if standalone %}
     <article>{{ content | safe }}</article>
 {% else %}
-
+    <div class="flex flex-row">
+        <div class="basis-1/4 min-h-screen">
+            <!-- Sidebar -->
+            <div class="m-4 p-8 bg-base-200 rounded-xl prose prose-sm">
+                {% include "../../wiki/sidebar.njk" %}
+            </div>
+        </div>
+        <div class="basis-3/4">
+        <!-- Content -->
+        <br />
+            <article class="prose-lg">{{ content | safe }}</article>
+        </div>
+    </div>
 {% endif %}
