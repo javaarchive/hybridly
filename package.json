@@ -30,6 +30,7 @@
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.9",
     "daisyui": "^2.51.5"
   }
 }
