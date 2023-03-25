@@ -5,5 +5,5 @@ module.exports = {
     "./src/pages/**/*.{html,md,11ty.js,liquid,njk,hbs,mustache,ejs,haml,pug}",
     "./src/index.{html,md,11ty.js,liquid,njk,hbs,mustache,ejs,haml,pug}",
   ],
-  plugins: [require("daisyui")]
+  plugins: [require("@tailwindcss/typography"),require("daisyui")]
 }

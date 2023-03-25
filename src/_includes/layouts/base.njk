@@ -9,9 +9,7 @@
   <body>
     {% include "../components/navigation.njk" %}
     <main class="p-12">
-     {% if title %}
-      <h1 class="text-3xl mb-8">{{title}}</h1>
-      {% endif %}
+     
       {{ content | safe }}
     </main>
     <script src="/assets/main.js"></script>

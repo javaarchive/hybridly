@@ -1,6 +1,21 @@
 ---
 layout: layouts/base.njk
 ---
-
+{% if date %} 
 <time>{{ date | readableDate }}</time>
-<article>{{ content | safe }}</article>
+{% endif %}
+<br />
+<br />
+{% if standalone %}
+<article class="prose md:prose-sm lg:prose-lg basis-3/4">{{ content | safe }}</article>
+{% else %}
+<div class="flex flex-row">
+<div class="toc toc-list basis-1/4">
+    {% if title %}
+    <h1 class="title text-2xl">{{title}}</h1>
+    {% endif %}
+    
+</div>
+<article class="prose md:prose-sm lg:prose-lg basis-3/4">{{ content | safe }}</article>
+</div>
+{% endif %}

@@ -1,31 +1,18 @@
 {% set navPages = collections.all | eleventyNavigation %}
-<div class="navbar bg-base-100">
+<div class="navbar bg-base-300">
   <div class="flex-1">
-    <a class="btn btn-ghost normal-case text-xl">smashmaster's hybrid site</a>
+    <a class="btn btn-ghost normal-case text-xl" href="/">smashmaster's hybrid site</a>
   </div>
   <div class="flex-none">
-    <div class="dropdown">
-      <label tabindex="0" class="btn btn-ghost btn-circle">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-      </label>
-      <ul tabindex="0" class="menu mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+      <ul tabindex="0" class="menu menu-horizontal px-1">
         {% for entry in navPages %}
           <li class="inline">
             <a
             href="{{ entry.url }}"
-            class="
-            {{'' if entry.url in page.url
-            else ''}}">
-            {{ entry.title }}
-          </a>
+            class="{{'' if entry.url in page.url else ''}}"> {{ entry.title }} </a>
           </li>
         {% endfor %}
       </ul>
-    </div>
   </div>
-  <div class="navbar-end">
-    
-  </div>
+  
 </div>
